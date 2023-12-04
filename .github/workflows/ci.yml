@@ -1,0 +1,41 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ] # Trigger the workflow on pushes to the main branch
+  pull_request:
+    branches: [ main ] # Trigger the workflow on pull requests targeting the main branch
+  workflow_dispatch: # Allow manual trigger of the workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ROOT_PASSWORD: admin
+          MYSQL_DATABASE: dispatchpulse_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Build and deploy (if applicable)
+        run: |
+          # Add build and deploy steps if needed

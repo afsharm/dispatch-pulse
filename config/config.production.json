@@ -1,0 +1,7 @@
+{
+    "username": "username_dev",
+    "password": "password_dev",
+    "database": "development_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
