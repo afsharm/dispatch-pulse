@@ -45,3 +45,8 @@ curl -X POST -H "Content-Type: application/json" -d '{"name":"Item1"}' http://lo
 This project uses EditorConfig to standardize text editor configuration. Visit https://editorconfig.org/ for more details.
 
 This project uses ESLint.
+
+### Useful VSCode plugins
+EditorConfig
+dbaeumer: ESLint integration with vscode
+
