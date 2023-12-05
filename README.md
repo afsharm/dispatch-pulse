@@ -39,3 +39,7 @@ curl http://localhost:3000/parcel
 # Making a POST request with JSON data
 curl -X POST -H "Content-Type: application/json" -d '{"name":"Item1"}' http://localhost:3000/parcel
 ```
+
+## Development
+
+This project uses EditorConfig to standardize text editor configuration. Visit https://editorconfig.org/ for more details.
