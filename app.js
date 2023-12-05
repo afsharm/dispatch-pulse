@@ -14,7 +14,7 @@ try {
 }
 
 const app = express();
-
+const test = 1;
 app.use(express.json());
 app.use('/', healthRoutes);
 app.use('/greeting', greetingRoutes);
